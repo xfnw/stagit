@@ -1,7 +1,21 @@
 body {
-	color: #000;
-	background-color: #fff;
+	color: #cdcdcd;
+	background-color: #141415;
 	font-family: monospace;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin: 10px auto;
+}
+
+
+a {
+	text-decoration: none;
+	color: #acc;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,9 +59,14 @@ table td {
 	padding: 0 0.4em;
 }
 
+#content {
+	display: inline-block;
+}
+
 #content table td {
 	vertical-align: top;
 	white-space: nowrap;
+	margin: auto;
 }
 
 #branches tr:hover td,
@@ -55,14 +74,16 @@ table td {
 #index tr:hover td,
 #log tr:hover td,
 #files tr:hover td {
-	background-color: #eee;
+	background-color: #222;
 }
 
 #index tr td:nth-child(2),
+#files tr td:nth-child(2),
 #tags tr td:nth-child(3),
 #branches tr td:nth-child(3),
 #log tr td:nth-child(2) {
 	white-space: normal;
+	min-width: 50vh;
 }
 
 td.num {
@@ -70,7 +91,7 @@ td.num {
 }
 
 .desc {
-	color: #555;
+	color: #aaa;
 }
 
 hr {
@@ -84,19 +105,19 @@ pre {
 }
 
 pre a.h {
-	color: #00a;
+	color: #77a;
 }
 
 .A,
 span.i,
 pre a.i {
-	color: #070;
+	color: #5c5;
 }
 
 .D,
 span.d,
 pre a.d {
-	color: #e00;
+	color: #e77;
 }
 
 pre a.h:hover,
@@ -104,3 +125,4 @@ pre a.i:hover,
 pre a.d:hover {
 	text-decoration: none;
 }
+
