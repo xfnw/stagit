@@ -1,0 +1,9 @@
+#!/bin/sh
+
+git update-server-info
+stagit .
+ln -sf log.html index.html
+
+cd ..
+stagit-index */ > index.html
+
