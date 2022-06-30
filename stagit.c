@@ -324,8 +324,14 @@ getrefs(struct referenceinfo **pris, size_t *prefcount)
 		if (!(ci = commitinfo_getbyoid(id)))
 			break;
 
-		if (!(ris = reallocarray(ris, refcount + 1, sizeof(*ris))))
-			err(1, "realloc");
+		{
+			struct referenceinfo *newris;
+			if (!(newris = reallocarray(ris, refcount + 1, sizeof(*ris)))) {
+				free(ris);
+				err(1, "realloc");
+			}
+			ris = newris;
+		}
 		ris[refcount].ci = ci;
 		ris[refcount].ref = r;
 		refcount++;
