@@ -866,7 +866,7 @@ printcommitatom(FILE *fp, struct commitinfo *ci, const char *tag)
 		fputs("</updated>\n", fp);
 	}
 	if (ci->summary) {
-		fputs("<title type=\"text\">", fp);
+		fputs("<title>", fp);
 		if (tag && tag[0]) {
 			fputs("[", fp);
 			xmlencode(fp, tag, strlen(tag));
@@ -886,7 +886,7 @@ printcommitatom(FILE *fp, struct commitinfo *ci, const char *tag)
 		fputs("</email>\n</author>\n", fp);
 	}
 
-	fputs("<content type=\"text\">", fp);
+	fputs("<content>", fp);
 	fprintf(fp, "commit %s\n", ci->oid);
 	if (ci->parentoid[0])
 		fprintf(fp, "parent %s\n", ci->parentoid);
@@ -1190,7 +1190,7 @@ writerefs(FILE *fp)
 void
 usage(char *argv0)
 {
-	fprintf(stderr, "%s [-c cachefile | -l commits] "
+	fprintf(stderr, "usage: %s [-c cachefile | -l commits] "
 	        "[-u baseurl] repodir\n", argv0);
 	exit(1);
 }

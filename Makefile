@@ -1,7 +1,7 @@
 .POSIX:
 
 NAME = stagit
-VERSION = 1.1
+VERSION = 1.2
 
 # paths
 PREFIX = /usr/local
@@ -15,6 +15,10 @@ LIBGIT_LIB = -L/usr/local/lib -lgit2
 STAGIT_CFLAGS = ${LIBGIT_INC} ${CFLAGS}
 STAGIT_LDFLAGS = ${LIBGIT_LIB} ${LDFLAGS}
 STAGIT_CPPFLAGS = -D_XOPEN_SOURCE=700 -D_DEFAULT_SOURCE -D_BSD_SOURCE
+
+# Uncomment to enable workaround for older libgit2 which don't support this
+# option. This workaround will be removed in the future *pinky promise*.
+#STAGIT_CFLAGS += -DGIT_OPT_SET_OWNER_VALIDATION=-1
 
 SRC = \
 	stagit.c\
