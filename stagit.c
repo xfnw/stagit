@@ -41,6 +41,7 @@ struct commitinfo {
 	git_commit *parent;
 	git_tree   *commit_tree;
 	git_tree   *parent_tree;
+	git_note   *note;
 
 	size_t addcount;
 	size_t delcount;
@@ -229,6 +230,7 @@ commitinfo_free(struct commitinfo *ci)
 	git_tree_free(ci->parent_tree);
 	git_commit_free(ci->commit);
 	git_commit_free(ci->parent);
+	git_note_free(ci->note);
 	memset(ci, 0, sizeof(*ci));
 	free(ci);
 }
@@ -252,6 +254,9 @@ commitinfo_getbyoid(const git_oid *id)
 	ci->committer = git_commit_committer(ci->commit);
 	ci->summary = git_commit_summary(ci->commit);
 	ci->msg = git_commit_message(ci->commit);
+
+	if (git_note_read(&(ci->note), repo, "refs/notes/commits", id) < 0)
+		ci->note = NULL;
 
 	return ci;
 
@@ -619,6 +624,13 @@ printcommit(FILE *fp, struct commitinfo *ci)
 	if (ci->msg) {
 		putc('\n', fp);
 		xmlencode(fp, ci->msg, strlen(ci->msg));
+		putc('\n', fp);
+	}
+	if (ci->note) {
+		const char *note = git_note_message(ci->note);
+
+		fputs("<b>Notes:</b>\n", fp);
+		xmlencode(fp, note, strlen(note));
 		putc('\n', fp);
 	}
 }
