@@ -1,0 +1,6 @@
+this only implements support for showing the default "commits"
+notes namespace, notes in different namespaces will not be shown
+
+this does not add a mechanism for rebuilding commit pages that
+have new notes, implementing such (for example via a git hook)
+is left as an exercise to the reader
