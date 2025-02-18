@@ -8,10 +8,13 @@ body {
 	margin: 10px auto;
 }
 
-
 a {
 	text-decoration: none;
-	color: #3291FF;
+	color: #3291ff;
+}
+
+a:visited {
+	color: #b83fff;
 }
 
 a:hover {
