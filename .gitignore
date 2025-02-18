@@ -1,0 +1,4 @@
+*.o
+stagit
+stagit-index
+tags
