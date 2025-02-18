@@ -129,3 +129,20 @@ pre a.d:hover {
 	text-decoration: none;
 }
 
+@media (prefers-color-scheme: light) {
+	body { background: white; color: #141415; }
+	a { color: #00e; }
+	a:visited { color: #551a8b; }
+	#blob a:hover { color: blue; }
+	#branches tr:hover td,
+	#tags tr:hover td,
+	#index tr:hover td,
+	#log tr:hover td,
+	#files tr:hover td {
+		background-color: #eee;
+	}
+	.desc { color: #555; }
+	pre a.h { color: #001; }
+	.A, span.i, pre a.i { color: #070; }
+	.D, span.d, pre a.d { color: #e00; }
+}
