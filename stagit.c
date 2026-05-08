@@ -522,7 +522,7 @@ writeheader(FILE *fp, const char *title)
 	if (description[0])
 		fputs(" - ", fp);
 	xmlencode(fp, description, strlen(description));
-	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%s../favicon.png\" />\n", relpath);
+	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%s../favicon.webp\" />\n", relpath);
 	fputs("<link rel=\"alternate\" type=\"application/atom+xml\" title=\"", fp);
 	xmlencode(fp, name, strlen(name));
 	fprintf(fp, " Atom Feed\" href=\"%satom.xml\" />\n", relpath);
@@ -531,7 +531,7 @@ writeheader(FILE *fp, const char *title)
 	fprintf(fp, " Atom Feed (tags)\" href=\"%stags.xml\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s../style.css\" />\n", relpath);
 	fputs("</head>\n<body>\n<table><tr><td>", fp);
-	fprintf(fp, "<a href=\"../%s\"><img src=\"%s../logo.png\" alt=\"\" width=\"32\" height=\"32\" /></a>",
+	fprintf(fp, "<a href=\"../%s\"><img src=\"%s../logo.webp\" alt=\"\" width=\"32\" height=\"32\" /></a>",
 	        relpath, relpath);
 	fputs("</td><td><h1>", fp);
 	xmlencode(fp, strippedname, strlen(strippedname));

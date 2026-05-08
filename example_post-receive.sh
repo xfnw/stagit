@@ -68,6 +68,6 @@ stagit -c "${cachefile}" -u "https://git.codemadness.nl/$d/" "${reposdir}/${r}"
 
 ln -sf log.html index.html
 ln -sf ../style.css style.css
-ln -sf ../logo.png logo.png
+ln -sf ../logo.webp logo.webp
 
 echo "done"

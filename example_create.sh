@@ -3,7 +3,7 @@
 # - Makes static pages for each repository directory.
 #
 # NOTE, things to do manually (once) before running this script:
-# - copy style.css, logo.png and favicon.png manually, a style.css example
+# - copy style.css, logo.webp and favicon.webp manually, a style.css example
 #   is included.
 #
 # - write clone URL, for example "git://git.codemadness.org/dir" to the "url"
@@ -36,8 +36,8 @@ for dir in "${reposdir}/"*/; do
 	# symlinks
 	ln -sf log.html index.html
 	ln -sf ../style.css style.css
-	ln -sf ../logo.png logo.png
-	ln -sf ../favicon.png favicon.png
+	ln -sf ../logo.webp logo.webp
+	ln -sf ../favicon.webp favicon.webp
 
 	echo "done"
 done

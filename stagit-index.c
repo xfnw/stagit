@@ -101,10 +101,10 @@ writeheader(FILE *fp)
 		"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n"
 		"<title>", fp);
 	xmlencode(fp, description, strlen(description));
-	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%sfavicon.png\" />\n", relpath);
+	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%sfavicon.webp\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%sstyle.css\" />\n", relpath);
 	fputs("</head>\n<body>\n", fp);
-	fprintf(fp, "<table>\n<tr><td><img src=\"%slogo.png\" alt=\"\" width=\"32\" height=\"32\" /></td>\n"
+	fprintf(fp, "<table>\n<tr><td><img src=\"%slogo.webp\" alt=\"\" width=\"32\" height=\"32\" /></td>\n"
 	        "<td><span class=\"desc\">", relpath);
 	xmlencode(fp, description, strlen(description));
 	fputs("</span></td></tr><tr><td></td><td>\n"
