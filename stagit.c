@@ -533,7 +533,7 @@ writeheader(FILE *fp, const char *title)
 	fprintf(fp, " Atom Feed (tags)\" href=\"%stags.xml\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s../style.css\" />\n", relpath);
 	fputs("</head>\n<body>\n<table><tr><td>", fp);
-	fprintf(fp, "<a href=\"../%s\"><img src=\"%s../logo.webp\" alt=\"\" width=\"32\" height=\"32\" /></a>",
+	fprintf(fp, "<a href=\"../%s\"><img src=\"%s../logo.webp\" alt=\"back to repositories\" width=\"32\" height=\"32\" /></a>",
 	        relpath, relpath);
 	fputs("</td><td><h1>", fp);
 	xmlencode(fp, strippedname, strlen(strippedname));
