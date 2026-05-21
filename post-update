@@ -2,7 +2,6 @@
 
 git update-server-info
 stagit -l 200 .
-ln -sf log.html index.html
 
 cd ..
 stagit-index */ > index.html
